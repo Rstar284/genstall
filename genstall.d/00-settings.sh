@@ -20,8 +20,11 @@ DRIVE_NAME="vda"
 TIMEZONE="UTC"
 HOSTNAME="gentoo-linux"
 PASSWORD="gentoo"
+USER_NAME="rstar284"
+USER_PASSWORD="yourpasswordhere"
+USER_GROUPS="users,wheel,audio,portage,cdrom,floppy,games"
 
-SOFTWARE="app-admin/syslog-ng sys-process/cronie"
+SOFTWARE="app-admin/syslog-ng sys-process/cronie app-admin/sudo"
 DAEMONS="syslog-ng cronie sshd"
 
 # Internal Variables
