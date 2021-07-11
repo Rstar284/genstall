@@ -14,14 +14,14 @@ CFLAGS="-march=native -O2 -pipe"
 CXXFLAGS="${CFLAGS}"
 CHOST="x86_64-pc-linux-gnu"
 
-MAKEOPTS="--jobs=$_CORES"
-EMERGE_DEFAULT_OPTS="--jobs=$_CORES"
-
-USE="bindist mmx sse sse2"
+MAKEOPTS="--jobs=${_CORES}"
+EMERGE_DEFAULT_OPTS="--jobs=${_CORES}"
+# Config the USE var to your own need
+USE=""
 PORTDIR="/usr/portage"
 
-GENTOO_MIRRORS="$DIST_MIRROR"
-SYNC="$SYNC_MIRROR"
+GENTOO_MIRRORS="${DIST_MIRROR}"
+SYNC="${SYNC_MIRROR}"
 EOF
 
 cp -L /etc/resolv.conf /mnt/gentoo/etc/

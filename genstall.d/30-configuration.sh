@@ -20,13 +20,13 @@ cat > /mnt/gentoo/etc/fstab << EOF
 EOF
 
 cat > /mnt/gentoo/etc/conf.d/hostname << EOF
-hostname="$HOSTNAME"
+hostname="${HOSTNAME}"
 EOF
 
 ETH0=$(ifconfig | head -1 | awk '{print $1}' | sed 's/://')
 
 cat > /mnt/gentoo/etc/conf.d/net << EOF
-config_$ETH0="dhcp"
+config_${ETH0}="dhcp"
 EOF
 
 $_CHROOT /bin/bash << EOF

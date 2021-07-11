@@ -2,10 +2,9 @@
 set -o errexit
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 
+
 cat > /tmp/00-settings.sh << "EOF"
-
-# User Editable Variables
-
+#Variables that can be edited to configure the installation
 DIST_MIRROR="http://mirror.bytemark.co.uk/gentoo/"
 SYNC_MIRROR="rsync://mirror.bytemark.co.uk/gentoo-portage"
 
@@ -27,12 +26,11 @@ USER_GROUPS="users,wheel,audio,portage,cdrom"
 SOFTWARE="app-admin/syslog-ng sys-process/cronie app-admin/sudo"
 DAEMONS="syslog-ng cronie sshd"
 
-# Internal Variables
-
+# Internal Variables, DO NOT TOUCH
 _CORES=$(($(nproc) + 1))
 _LATEST_STAGE3=$(curl -s $DIST_MIRROR/releases/amd64/autobuilds/latest-stage3-amd64.txt | tail -1 | awk '{print $1}')
 _STAGE3_URI="$DIST_MIRROR/releases/amd64/autobuilds/$_LATEST_STAGE3"
-_CHROOT="chroot /mnt/gentoo"
+_CHROOT="chroot /bin/bash /mnt/gentoo"
 function _EMERGE() {
 	set +e
 	$_CHROOT emerge --pretend "$@"
