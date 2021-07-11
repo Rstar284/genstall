@@ -8,10 +8,10 @@ sgdisk -n 1:0:$BOOT_SIZE -t 1:ef00 -c 1:"linux-boot" \
 -n 3:0:$ROOT_SIZE -t 3:8300 -c 3:"linux-root" \
 -p /dev/$DRIVE_NAME
 
-mkfs.$BOOT_FS /dev/$DRIVE_NAME1
-mkswap /dev/$DRIVE_NAME2
-swapon /dev/$DRIVE_NAME2
-mkfs.$ROOT_FS /dev/$DRIVE_NAME3
+mkfs.$BOOT_FS /dev/${DRIVE_NAME}1
+mkswap /dev/${DRIVE_NAME}2
+swapon /dev/${DRIVE_NAME}2
+mkfs.$ROOT_FS /dev/${DRIVE_NAME}3
 
 mount /dev/sda4 /mnt/gentoo
 mkdir /mnt/gentoo/boot
