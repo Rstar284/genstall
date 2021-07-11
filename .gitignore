@@ -1,6 +1,0 @@
-*.box
-*.log
-.vagrant/
-Vagrantfile
-iso/
-packer_cache/
