@@ -3,16 +3,15 @@ set -o errexit
 source /tmp/00-settings.sh
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 
-sgdisk -n 1:0:+32M -t 1:ef02 -c 1:"bios-boot"  \
--n 2:0:$BOOT_SIZE -t 2:8300 -c 2:"linux-boot" \
--n 3:0:$SWAP_SIZE -t 3:8200 -c 3:"swap"       \
--n 4:0:$ROOT_SIZE -t 4:8300 -c 4:"linux-root" \
--p /dev/sda
+sgdisk -n 1:0:$BOOT_SIZE -t 1:ef00 -c 1:"linux-boot" \
+-n 2:0:$SWAP_SIZE -t 2:8200 -c 2:"swap"       \
+-n 3:0:$ROOT_SIZE -t 3:8300 -c 3:"linux-root" \
+-p /dev/$DRIVE_NAME
 
-mkfs.$BOOT_FS /dev/sda2
-mkswap /dev/sda3
-swapon /dev/sda3
-mkfs.$ROOT_FS /dev/sda4
+mkfs.$BOOT_FS /dev/$DRIVE_NAME1
+mkswap /dev/$DRIVE_NAME2
+swapon /dev/$DRIVE_NAME2
+mkfs.$ROOT_FS /dev/$DRIVE_NAME3
 
 mount /dev/sda4 /mnt/gentoo
 mkdir /mnt/gentoo/boot
