@@ -14,9 +14,9 @@ $_CHROOT locale-gen
 
 cat > /mnt/gentoo/etc/fstab << EOF
 # <fs>        <mountpoint>        <type>        <opts>            <dump/pass>
-/dev/sda2     /boot               $BOOT_FS      noauto,noatime    0 2
-/dev/sda3     none                swap          sw                0 0
-/dev/sda4     /                   $ROOT_FS      defaults,noatime  0 1
+/dev/$DRIVE_NAME1     /boot               $BOOT_FS      noauto,noatime    0 2
+/dev/$DRIVE_NAME2     none                swap          sw                0 0
+/dev/$DRIVE_NAME3     /                   $ROOT_FS      defaults,noatime  0 1
 EOF
 
 cat > /mnt/gentoo/etc/conf.d/hostname << EOF
