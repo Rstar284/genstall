@@ -11,13 +11,13 @@ SYNC_MIRROR="rsync://mirror.bytemark.co.uk/gentoo-portage"
 
 BOOT_SIZE="+256MB"
 SWAP_SIZE="+1G"
-ROOT_SIZE="+10G"
+ROOT_SIZE="+48G"
 
-BOOT_FS="ext2"
+BOOT_FS="fat -F32"
 ROOT_FS="ext4"
 
 TIMEZONE="UTC"
-HOSTNAME="gentoo-amd64"
+HOSTNAME="gentoo-linux"
 PASSWORD="gentoo"
 
 SOFTWARE="app-admin/syslog-ng sys-process/cronie"
