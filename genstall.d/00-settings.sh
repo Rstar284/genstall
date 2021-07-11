@@ -22,7 +22,7 @@ HOSTNAME="gentoo-linux"
 PASSWORD="gentoo"
 USER_NAME="rstar284"
 USER_PASSWORD="yourpasswordhere"
-USER_GROUPS="users,wheel,audio,portage,cdrom,floppy,games"
+USER_GROUPS="users,wheel,audio,portage,cdrom"
 
 SOFTWARE="app-admin/syslog-ng sys-process/cronie app-admin/sudo"
 DAEMONS="syslog-ng cronie sshd"
