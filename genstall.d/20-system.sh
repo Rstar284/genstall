@@ -10,7 +10,7 @@ tar xjpf stage3-*.tar.bz2
 rm stage3-*.tar.bz2
 
 cat > /mnt/gentoo/etc/portage/make.conf << EOF
-CFLAGS="-O2 -pipe"
+CFLAGS="-march=native -O2 -pipe"
 CXXFLAGS="${CFLAGS}"
 CHOST="x86_64-pc-linux-gnu"
 
