@@ -11,7 +11,7 @@ Boot from a [Live CD](http://www.sysresccd.org/SystemRescueCd_Homepage) and run:
 
 	curl -L https://api.github.com/repos/rstar284/genstall/tarball > genstall.tar.gz
 	tar xvf genstall.tar.gz
-	cd rstar284-genstall-*
+	cd Rstar284-genstall-*
 	bash install.sh
 
 Configuration
