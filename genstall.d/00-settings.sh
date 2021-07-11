@@ -15,6 +15,7 @@ ROOT_SIZE="+48G"
 
 BOOT_FS="fat -F32"
 ROOT_FS="ext4"
+DRIVE_NAME="vda"
 
 TIMEZONE="UTC"
 HOSTNAME="gentoo-linux"
