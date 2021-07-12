@@ -40,4 +40,4 @@ $PASSWORD
 $PASSWORD
 EOF
 
-bash ./kernel.sh
+bash kernel.sh

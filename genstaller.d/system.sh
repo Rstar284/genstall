@@ -32,4 +32,4 @@ mount --rbind /sys /mnt/gentoo/sys
 $_CHROOT emerge-webrsync
 $_CHROOT eselect news read --quiet all
 
-bash ./configuration.sh
+bash configuration.sh

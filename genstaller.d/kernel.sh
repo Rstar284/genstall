@@ -13,4 +13,4 @@ grub-install --target=x86_64-efi --efi-directory=/dev/${DRIVE_NAME}1 --bootloade
 grub-mkconfig -o /boot/grub/grub.cfg
 EOF
 
-bash ./software.sh
+bash software.sh

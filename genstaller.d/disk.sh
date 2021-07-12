@@ -17,4 +17,4 @@ mount /dev/${DRIVE_NAME}3 /mnt/gentoo
 mkdir /mnt/gentoo/boot
 mount /dev/${DRIVE_NAME}1 /mnt/gentoo/boot
 
-bash ./system.sh
+bash system.sh

@@ -16,4 +16,4 @@ $_CHROOT revdep-rebuild
 $_CHROOT rm -rf /var/tmp/portage/*
 $_CHROOT rm -rf /usr/portage/distfiles/*
 
-bash ./finalization.sh
+bash finalization.sh
