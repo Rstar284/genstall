@@ -9,7 +9,7 @@ Usage: On Bare Metal
 
 Boot from a [Live CD](http://www.sysresccd.org/SystemRescueCd_Homepage) and run:
 
-	curl -L https://api.github.com/repos/rstar284/genstaller/tarball > genstall.tar.gz
+	curl -L https://api.github.com/repos/rstar284/genstaller/tarball > genstaller.tar.gz
 	tar xvf genstaller.tar.gz
 	cd Rstar284-genstaller-*
 	bash install.sh
