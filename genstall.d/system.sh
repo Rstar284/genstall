@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -o errexit
-source /tmp/00-settings.sh
+source /tmp/settings.sh
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 
 mkdir -p /mnt/gentoo

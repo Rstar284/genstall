@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -o errexit
-source /tmp/00-settings.sh
+source /tmp/settings.sh
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 
 sgdisk -n 1:0:${BOOT_SIZE} -t 1:ef00 -c 1:"linux-boot" \

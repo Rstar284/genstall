@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -o errexit
-source /tmp/00-settings.sh || true
+source /tmp/settings.sh || true
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 
 useradd -mG $USER_GROUPS $USER_NAME
