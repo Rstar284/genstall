@@ -3,7 +3,7 @@ set -o errexit
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 
 
-cat > /tmp/00-settings.sh << "EOF"
+cat > /tmp/settings.sh << "EOF"
 #Variables that can be edited to configure the installation
 DIST_MIRROR="http://mirror.bytemark.co.uk/gentoo/"
 SYNC_MIRROR="rsync://mirror.bytemark.co.uk/gentoo-portage"

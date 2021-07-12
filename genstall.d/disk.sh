@@ -13,6 +13,6 @@ mkswap /dev/${DRIVE_NAME}2
 swapon /dev/${DRIVE_NAME}2
 mkfs.$ROOT_FS /dev/${DRIVE_NAME}3
 
-mount /dev/sda4 /mnt/gentoo
+mount /dev/${DRIVE_NAME}3 /mnt/gentoo
 mkdir /mnt/gentoo/boot
-mount /dev/sda2 /mnt/gentoo/boot
+mount /dev/${DRIVE_NAME}1 /mnt/gentoo/boot
