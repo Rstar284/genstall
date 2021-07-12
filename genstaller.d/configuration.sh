@@ -39,3 +39,5 @@ $_CHROOT passwd root << EOF
 $PASSWORD
 $PASSWORD
 EOF
+
+bash ./kernel.sh

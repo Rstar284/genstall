@@ -43,3 +43,4 @@ function _EMERGE() {
 }
 
 EOF
+bash ./disk.sh

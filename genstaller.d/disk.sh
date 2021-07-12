@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -o errexit
-source /tmp/settings.sh
+source /tmp/zsettings.sh
 [[ $(whoami) == 'root' ]] || exec sudo su -c $0 root
 
 sgdisk -n 1:0:${BOOT_SIZE} -t 1:ef00 -c 1:"linux-boot" \
@@ -16,3 +16,5 @@ mkfs.$ROOT_FS /dev/${DRIVE_NAME}3
 mount /dev/${DRIVE_NAME}3 /mnt/gentoo
 mkdir /mnt/gentoo/boot
 mount /dev/${DRIVE_NAME}1 /mnt/gentoo/boot
+
+bash ./system.sh
