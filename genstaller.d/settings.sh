@@ -30,7 +30,7 @@ DAEMONS="syslog-ng cronie sshd"
 _CORES=$(($(nproc) + 1))
 _LATEST_STAGE3=$(curl -s $DIST_MIRROR/releases/amd64/autobuilds/latest-stage3-amd64.txt | tail -1 | awk '{print $1}')
 _STAGE3_URI="$DIST_MIRROR/releases/amd64/autobuilds/$_LATEST_STAGE3"
-_CHROOT="chroot /bin/bash /mnt/gentoo"
+_CHROOT="chroot /mnt/gentoo /bin/bash"
 function _EMERGE() {
 	set +e
 	$_CHROOT emerge --pretend "$@"
