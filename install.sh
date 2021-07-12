@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-
-bash genstaller.d/settings.sh
+cd genstaller.d/
+bash settings.sh

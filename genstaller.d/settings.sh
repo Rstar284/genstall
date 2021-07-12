@@ -43,5 +43,4 @@ function _EMERGE() {
 }
 
 EOF
-
-bash disk.sh
+bash ./internal/execfile.sh disk
