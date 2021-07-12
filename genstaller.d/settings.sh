@@ -25,6 +25,7 @@ USER_GROUPS="users,wheel,audio,portage,cdrom"
 
 SOFTWARE="app-admin/syslog-ng sys-process/cronie app-admin/sudo"
 DAEMONS="syslog-ng cronie sshd"
+PROFILE="default/linux/amd64/17.1"
 
 # Internal Variables, DO NOT TOUCH
 _CORES=$(($(nproc) + 1))

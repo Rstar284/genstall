@@ -35,9 +35,6 @@ ln -s net.lo net.${ETH0}
 rc-update add net.${ETH0} default
 EOF
 
-$_CHROOT passwd root << EOF
-$PASSWORD
-$PASSWORD
-EOF
+$_CHROOT echo root:${PASSWORD} | chpasswd
 
 bash ./internal/execfile.sh kernel

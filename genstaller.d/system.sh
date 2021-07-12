@@ -20,16 +20,24 @@ USE="offensive"
 PORTDIR="/usr/portage"
 
 GENTOO_MIRRORS="${DIST_MIRROR}"
-SYNC="${SYNC_MIRROR}"
 EOF
 
 cp -L /etc/resolv.conf /mnt/gentoo/etc/
 
-mount --rbind /dev /mnt/gentoo/dev
-mount -t proc proc /mnt/gentoo/proc
-mount --rbind /sys /mnt/gentoo/sys
+if [[$PROFILE != *systemd]]; then
+    mount --types proc /proc /mnt/gentoo/proc
+    mount --rbind /sys /mnt/gentoo/sys
+    mount --make-rslave /mnt/gentoo/sys
+    mount --rbind /dev /mnt/gentoo/dev
+    mount --make-rslave /mnt/gentoo/dev
+elif [[$PROFILE == *systemd]]; then
+    mount --types proc /proc /mnt/gentoo/proc
+    mount --rbind /sys /mnt/gentoo/sys
+    mount --rbind /dev /mnt/gentoo/dev
+fi
 
 $_CHROOT emerge-webrsync
-$_CHROOT eselect news read --quiet all
+$_CHROOT eselect news read all
+$_CHROOT ln -sf /etc/portage/make.profile /var/db/repos/gentoo/profiles/${PROFILE}
 
 bash ./internal/execfile.sh configuration
