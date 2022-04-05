@@ -29,7 +29,7 @@ PROFILE="default/linux/amd64/17.1"
 
 # Internal Variables, DO NOT TOUCH
 _CORES=$(($(nproc) + 1))
-_LATEST_STAGE3=$(curl -s $DIST_MIRROR/releases/amd64/autobuilds/latest-stage3-amd64.txt | tail -1 | awk '{print $1}')
+_LATEST_STAGE3=$(curl -s $DIST_MIRROR/releases/amd64/autobuilds/latest-stage3.txt | tail -1 | awk '{print $1}')
 _STAGE3_URI="$DIST_MIRROR/releases/amd64/autobuilds/$_LATEST_STAGE3"
 _CHROOT="chroot /mnt/gentoo /bin/bash"
 function _EMERGE() {
